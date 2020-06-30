@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+// vars
+$primary-color: #ef5b4c;
+$secondary-color: #007bff;
+$back-color1: #fff;
+$back-color2: #f9f9f3;
+
+// general
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.link {
+}
+
+// navbar
+.navbar {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.75rem;
+  background-color: $back-color1;
+  color: #000;
+  flex-wrap: wrap;
+  line-height: 1.5rem;
+  // padding: 0 2rem;
+  padding: 1.25rem 1.875rem;
+
+  .logo-img {
+    // margin-top: 5px;
+    // margin-left: -2px;
+  }
+}
+
+.menu {
+  display: flex;
+  transform: translate(0px, -0.2rem);
+
+  li {
+    // padding: 1rem;
+    margin-right: 1.125rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// showcase
+.showcase {
+  height: calc(100vh - 3.75rem);
+  margin-top: 3.75rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
