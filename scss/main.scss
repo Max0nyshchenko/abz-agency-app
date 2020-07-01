@@ -25,7 +25,25 @@ a {
   }
 }
 
-.link {
+button.primary {
+  background-color: $primary-color;
+  color: $back-color1;
+  padding: 0.5rem 3.7rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  outline: none;
+
+  &:hover {
+    background-color: darken($primary-color, 20);
+  }
+}
+
+h1.heading1 {
+  font-size: 48.7px;
+  line-height: 54px;
+  font-weight: 400;
 }
 
 // navbar
@@ -45,11 +63,6 @@ a {
   line-height: 1.5rem;
   // padding: 0 2rem;
   padding: 1.25rem 1.875rem;
-
-  .logo-img {
-    // margin-top: 5px;
-    // margin-left: -2px;
-  }
 }
 
 .menu {
@@ -68,9 +81,60 @@ a {
 
 // showcase
 .showcase {
-  height: calc(100vh - 3.75rem);
+  height: 37.5rem;
   margin-top: 3.75rem;
+  margin-bottom: 9.5rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.showcase-info {
+  width: 56%;
+  color: $back-color1;
+  padding: 6.875rem 0 0 1.875rem;
+
+  .title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    line-height: 3.313rem;
+  }
+
+  p {
+    margin-top: 1.8rem;
+    margin-bottom: 2.1rem;
+    line-height: 1.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+// Acquainted
+.acquainted-wrapper {
+  h1 {
+    text-align: center;
+  }
+
+  .acquainted-info-wrapper {
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    img {
+      width: 100%;
+      padding: 2.3rem;
+      margin: 2.2rem 1.3rem;
+    }
+
+    .acquainted-info {
+      padding: 4.1rem 1.5rem 0 2.2rem;
+
+      h2 {
+        font-weight: 400;
+      }
+      p {
+        line-height: 1.6rem;
+        text-align: justify;
+      }
+    }
+  }
 }
