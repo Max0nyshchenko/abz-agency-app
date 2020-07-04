@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Showcase from "./components/Showcase";
 import Acquainted from "./components/Acquainted";
 import Users from "./components/Users";
+import Form from "./components/Form";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Showcase />
       <Acquainted />
       <Users />
+      <Form />
     </>
   );
 }
