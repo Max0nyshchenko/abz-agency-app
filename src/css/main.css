@@ -29,6 +29,7 @@ button.primary {
   border-radius: 0.25rem;
   font-weight: bold;
   outline: none;
+  cursor: pointer;
 }
 
 button.primary:hover {
@@ -42,12 +43,30 @@ button.flat {
   font-weight: bold;
   color: #ef5b4c;
   background: none;
+  cursor: pointer;
+}
+
+button.flat:hover {
+  color: #c42211;
+}
+
+button.disabled {
+  color: #a6a5a5;
+  background-color: #d7d7d7;
+  padding: 0.5rem 3.7rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
 }
 
 h1.heading1 {
-  font-size: 48.7px;
+  font-size: 50px;
   line-height: 54px;
   font-weight: 400;
+  text-align: center;
 }
 
 .navbar {
@@ -93,7 +112,6 @@ h1.heading1 {
 .showcase {
   height: 37.5rem;
   margin-top: 3.75rem;
-  margin-bottom: 9.5rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -108,15 +126,20 @@ h1.heading1 {
 .showcase-info .title {
   font-size: 3rem;
   text-transform: uppercase;
-  letter-spacing: 0.07rem;
+  letter-spacing: -0.063rem;
   line-height: 3.313rem;
 }
 
 .showcase-info p {
-  margin-top: 1.8rem;
+  margin-top: 1.6rem;
   margin-bottom: 2.1rem;
+  text-align: justify;
   line-height: 1.5rem;
   padding-right: 0.5rem;
+}
+
+.acquainted-wrapper {
+  padding: 9.5rem 0rem;
 }
 
 .acquainted-wrapper h1 {
@@ -137,7 +160,7 @@ h1.heading1 {
 }
 
 .acquainted-wrapper .acquainted-info-wrapper .acquainted-info {
-  padding: 4.1rem 1.5rem 0 2.2rem;
+  padding: 4.4rem 1.5rem 0 2.2rem;
 }
 
 .acquainted-wrapper .acquainted-info-wrapper .acquainted-info h2 {
@@ -150,10 +173,62 @@ h1.heading1 {
 }
 
 .acquainted-wrapper .acquainted-info-wrapper .acquainted-info p:last-of-type {
-  margin-bottom: 0.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .acquainted-wrapper .acquainted-info-wrapper .acquainted-info p,
 .acquainted-wrapper .acquainted-info-wrapper .acquainted-info button {
   margin-top: -0.2rem;
+}
+
+.users-wrapper {
+  padding: 10rem 2.5rem;
+  background-color: #f9f9f3;
+}
+
+.users {
+  margin-top: 7.1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (200px)[3];
+      grid-template-columns: repeat(3, 200px);
+  gap: 1.875rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.users .user {
+  text-align: center;
+  width: 200px;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.users .user-info {
+  width: 200px;
+}
+
+.users .user-name {
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.users .user-img {
+  margin-bottom: 1.25rem;
+}
+
+.users .user-email {
+  margin: 0.75rem 0;
+}
+
+.users .user-email {
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

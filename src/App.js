@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Showcase from "./components/Showcase";
 import Acquainted from "./components/Acquainted";
+import Users from "./components/Users";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       <Showcase />
       <Acquainted />
+      <Users />
     </>
   );
 }
