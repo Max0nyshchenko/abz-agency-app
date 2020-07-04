@@ -381,3 +381,12 @@ h1.heading1 {
     }
   }
 }
+
+// Footer
+footer {
+  padding: 1.3rem 0;
+  border-top: 1px solid $back-color2;
+  text-align: center;
+}
+
+@import "responsive";
