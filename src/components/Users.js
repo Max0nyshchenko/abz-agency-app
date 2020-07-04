@@ -1,5 +1,7 @@
 import React from "react";
 import userImg from "../img/photo-cover.svg";
+import "react-tippy/dist/tippy.css";
+import { Tooltip } from "react-tippy";
 
 export default function Users() {
   function marginName() {
@@ -25,7 +27,14 @@ export default function Users() {
             <p className="user-position">
               Leading specialist of the Control Department
             </p>
-            <p className="user-email">controldepartment@gmail.com</p>
+            <Tooltip
+              followCursor="true"
+              title="Welcome to React"
+              position="bottom"
+              trigger="mouseenter"
+            >
+              <p className="user-email">controldepartment@gmail.com</p>
+            </Tooltip>
             <p className="user-phone">+380 50 687 03 24</p>
           </div>
         </div>
