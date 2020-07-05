@@ -101,6 +101,7 @@ h1.heading1 {
   z-index: 5;
   top: 0;
   left: 0;
+  bottom: 0;
   width: 290px;
   background-color: #fff;
   overflow: auto;
@@ -612,5 +613,12 @@ footer {
     margin-top: 6.8rem;
     width: 100%;
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .users {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
