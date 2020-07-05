@@ -41,6 +41,66 @@ export default function Navbar() {
           <img src={burgerLogo} alt="burger icon" />
         </button>
       )}
+      <div className="menu-mobile-wrapper">
+        <div className="dark-bg"></div>
+        <div className="menu-mobile">
+          <img src={logo} alt="logo" />
+          <hr />
+          <ul className="menu-mobile-section">
+            <li>
+              <a target="_blank">About me</a>
+            </li>
+            <li>
+              <a target="_blank">Relationships</a>
+            </li>
+            <li>
+              <a target="_blank">Users</a>
+            </li>
+            <li>
+              <a target="_blank">Sign up</a>
+            </li>
+            <li>
+              <a target="_blank">Terms and Conditions</a>
+            </li>
+          </ul>
+          <hr />
+          <ul className="menu-mobile-section">
+            <li>
+              <a target="_blank">How it works</a>
+            </li>
+            <li>
+              <a target="_blank">Partnership</a>
+            </li>
+            <li>
+              <a target="_blank">Help</a>
+            </li>
+            <li>
+              <a target="_blank">Leave testimonial</a>
+            </li>
+            <li>
+              <a target="_blank">Contact us</a>
+            </li>
+          </ul>
+          <hr />
+          <ul className="menu-mobile-section">
+            <li>
+              <a target="_blank">Articles</a>
+            </li>
+            <li>
+              <a target="_blank">Our news</a>
+            </li>
+            <li>
+              <a target="_blank">Testimonials</a>
+            </li>
+            <li>
+              <a target="_blank">Licenses</a>
+            </li>
+            <li>
+              <a target="_blank">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
   );
 }

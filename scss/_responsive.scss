@@ -107,3 +107,90 @@
     }
   }
 }
+
+// Mobile
+@media screen and (max-width: 360px) {
+  h1.heading1,
+  .showcase .title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .navbar {
+    width: 100vw;
+    height: 2.48rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .showcase {
+    margin-top: 2.5rem;
+    height: 25rem;
+
+    .showcase-info {
+      padding: 0;
+      width: 100%;
+
+      .title {
+        padding: 4.5rem 1.5rem 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      p {
+        margin: 0;
+        height: 6.5rem;
+        overflow: hidden;
+        line-height: 1.4rem;
+        padding: 1rem;
+        text-indent: 1.8rem;
+      }
+      button.primary {
+        margin: 0 auto;
+        display: block;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .acquainted-wrapper {
+    padding: 4.6rem 0;
+
+    .acquainted-info-wrapper {
+      grid-template-columns: 1fr;
+      padding: 2rem 1rem;
+      row-gap: 1rem;
+
+      img {
+        margin: -1rem 0 0 0;
+      }
+
+      .acquainted-info {
+        button {
+          margin: auto auto;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .users-wrapper {
+    padding: 3rem 2.5rem;
+
+    .users {
+      margin-top: 4.2rem;
+      justify-items: center;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-wrapper {
+    padding: 7rem 1rem;
+
+    .form {
+      margin-top: 6.8rem;
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
