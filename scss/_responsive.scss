@@ -115,7 +115,12 @@
     font-size: 30px;
     line-height: 34px;
   }
-
+  .menu-mobile {
+    img {
+      padding: 0.7rem 0.95rem;
+      padding-bottom: 0.2rem;
+    }
+  }
   .navbar {
     width: 100vw;
     height: 2.48rem;

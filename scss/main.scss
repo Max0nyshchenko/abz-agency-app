@@ -4,6 +4,7 @@ $primary-color: #ef5b4c;
 $secondary-color: #007bff;
 $back-color1: #fff;
 $back-color2: #f9f9f3;
+$transition: all 0.3s ease-in;
 
 // general
 * {
@@ -95,6 +96,14 @@ h1.heading1 {
   padding: 1.25rem 1.875rem;
 }
 
+.menu-mobile-wrapper {
+  display: none;
+
+  .show-menu-mobile-wrapper {
+    display: block;
+  }
+}
+
 .menu-mobile {
   position: fixed;
   z-index: 5;
@@ -104,10 +113,16 @@ h1.heading1 {
   width: 290px;
   background-color: $back-color1;
   overflow: auto;
+  transform: translateX(-100%);
+  transition: $transition;
+
+  &.show-menu-mobile {
+    transform: translateX(0%);
+  }
 
   img {
-    padding: 0.7rem 0.95rem;
-    padding-bottom: 0.2rem;
+    padding: 1rem 0.95rem;
+    padding-bottom: 1rem;
   }
 
   .menu-mobile-section {
@@ -120,14 +135,19 @@ h1.heading1 {
 
 .dark-bg {
   position: fixed;
+  transition: $transition;
   z-index: 0;
   width: 100vw;
-  height: 100vh;
+  height: 0vh;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #000000da;
+
+  &.show-bg {
+    height: 100vh;
+  }
 }
 
 .menu {
