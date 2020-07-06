@@ -3,9 +3,14 @@ import { Component } from "react";
 import React from "react";
 
 class MyProvider extends Component {
-  state = {
-    mobMenuOpened: false,
-  };
+  constructor() {
+    super();
+    this.state = {
+      mobMenuOpened: false,
+    };
+    this.burgerLogic = this.burgerLogic.bind(this);
+  }
+
   // dealing with containers overflow
   cutAt() {
     let showcaseP = document.querySelector(".showcase-info p");
@@ -24,8 +29,7 @@ class MyProvider extends Component {
   burgerLogic() {
     const menuMobile = document.querySelector(".menu-mobile");
     const darkBg = document.querySelector(".dark-bg");
-    let { mobMenuOpened } = this.state;
-    console.log(this.state);
+    let mobMenuOpened = this.state.mobMenuOpened;
     if (mobMenuOpened === false) {
       darkBg.classList.add("show-bg");
       menuMobile.classList.add("show-menu-mobile");
@@ -35,6 +39,9 @@ class MyProvider extends Component {
     } else {
       darkBg.classList.remove("show-bg");
       menuMobile.classList.remove("show-menu-mobile");
+      this.setState({
+        mobMenuOpened: false,
+      });
     }
   }
 
