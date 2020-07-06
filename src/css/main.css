@@ -96,14 +96,6 @@ h1.heading1 {
   padding: 1.25rem 1.875rem;
 }
 
-.menu-mobile-wrapper {
-  display: none;
-}
-
-.menu-mobile-wrapper .show-menu-mobile-wrapper {
-  display: block;
-}
-
 .menu-mobile {
   position: fixed;
   z-index: 5;
@@ -127,6 +119,7 @@ h1.heading1 {
 .menu-mobile img {
   padding: 1rem 0.95rem;
   padding-bottom: 1rem;
+  padding-top: 1.25rem;
 }
 
 .menu-mobile .menu-mobile-section {
@@ -172,7 +165,8 @@ h1.heading1 {
 }
 
 .showcase {
-  height: 37.5rem;
+  height: auto;
+  padding-bottom: 1rem;
   margin-top: 3.75rem;
   background-position: center;
   background-size: cover;
@@ -495,7 +489,8 @@ footer {
     line-height: 44px;
   }
   .showcase {
-    height: 31.2rem;
+    height: auto;
+    padding: 0 0 1rem 0;
   }
   .showcase .showcase-info {
     width: 63%;
@@ -586,7 +581,7 @@ footer {
     height: 25rem;
   }
   .showcase .showcase-info {
-    padding: 0;
+    padding: 0 !important;
     width: 100%;
   }
   .showcase .showcase-info .title {
@@ -648,4 +643,45 @@ footer {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  .showcase {
+    padding-bottom: 1rem;
+    height: auto;
+  }
+  .showcase .title {
+    width: 100%;
+    text-align: center;
+  }
+  .showcase .showcase-info {
+    padding: 1.5rem;
+    width: auto;
+  }
+  .acquainted-wrapper .acquainted-info-wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .acquainted-wrapper .acquainted-info-wrapper img {
+    padding-bottom: 5rem;
+  }
+  .users {
+    justify-items: center;
+  }
+  .form {
+    width: auto;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 444px) {
+  .showcase .showcase-info {
+    padding: 1rem;
+  }
+  .showcase .showcase-info .title {
+    width: auto;
+    text-align: center;
+  }
+}
+
+#root {
+  max-width: 1170px;
+  margin: 0 auto;
 }

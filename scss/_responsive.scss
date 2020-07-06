@@ -23,7 +23,8 @@
     line-height: 44px;
   }
   .showcase {
-    height: 31.2rem;
+    height: auto;
+    padding: 0 0 1rem 0;
 
     .showcase-info {
       width: 63%;
@@ -132,7 +133,7 @@
     height: 25rem;
 
     .showcase-info {
-      padding: 0;
+      padding: 0 !important;
       width: 100%;
 
       .title {
@@ -205,4 +206,56 @@
   .users {
     grid-template-columns: 1fr;
   }
+
+  .showcase {
+    padding-bottom: 1rem;
+    height: auto;
+
+    .title {
+      width: 100%;
+      text-align: center;
+    }
+
+    .showcase-info {
+      padding: 1.5rem;
+      width: auto;
+    }
+  }
+
+  .acquainted-wrapper {
+    .acquainted-info-wrapper {
+      grid-template-columns: 1fr;
+
+      img {
+        padding-bottom: 5rem;
+      }
+    }
+  }
+
+  .users {
+    justify-items: center;
+  }
+
+  .form {
+    width: auto;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 444px) {
+  .showcase {
+    .showcase-info {
+      padding: 1rem;
+
+      .title {
+        width: auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+#root {
+  max-width: 1170px;
+  margin: 0 auto;
 }
