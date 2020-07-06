@@ -301,6 +301,15 @@ h1.heading1 {
   padding: 0 2.5rem;
 }
 
+.form.submitted input:invalid {
+  border: 1px solid #db3445;
+}
+
+.form.submitted input:invalid:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem #f8d6da;
+          box-shadow: 0 0 0 0.2rem #f8d6da;
+}
+
 .form input.primary {
   margin: 0 auto;
   margin-top: 2rem;
@@ -323,16 +332,32 @@ h1.heading1 {
   margin: 0.3125rem 0;
 }
 
+.input-field input:-webkit-autofill,
+.input-field input:-webkit-autofill:hover,
+.input-field input:-webkit-autofill:focus,
+.input-field input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 .input-field input {
   height: 2.5rem;
   padding: 0.5rem 1rem;
   line-height: 1.5;
   color: #555;
-  background-color: #fff;
+  background-color: #fff !important;
   border: 0.075rem solid #ddd;
   border-radius: 0.25rem;
-  -webkit-box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+}
+
+.input-field input:focus {
+  outline: none;
+  border: 1px solid #80bdff;
+  -webkit-box-shadow: 0 0 0 0.2rem #e6f2ff;
+          box-shadow: 0 0 0 0.2rem #e6f2ff;
+}
+
+.input-field input:valid {
+  background-color: #fff !important;
 }
 
 .input-field input[type="file"] {

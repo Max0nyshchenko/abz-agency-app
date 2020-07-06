@@ -38,6 +38,12 @@ class MyProvider extends Component {
     }
   }
 
+  // Form logic
+  formSubmit() {
+    const form = document.querySelector(".form");
+    form.classList.add("submitted");
+  }
+
   render() {
     return (
       <MyContext.Provider
@@ -45,6 +51,7 @@ class MyProvider extends Component {
           ...this.state,
           cutAt: this.cutAt,
           burgerLogic: this.burgerLogic,
+          formSubmit: this.formSubmit,
         }}
       >
         {this.props.children}
