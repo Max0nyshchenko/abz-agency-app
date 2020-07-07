@@ -52,7 +52,7 @@ export default function Navbar(props) {
             )}
           </header>
           <div className="menu-mobile-wrapper">
-            <div className="dark-bg"></div>
+            <div onClick={context.burgerLogic} className="dark-bg"></div>
             <div className="menu-mobile">
               <img src={logo} alt="logo" />
               <hr />

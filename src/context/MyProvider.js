@@ -9,6 +9,7 @@ class MyProvider extends Component {
       mobMenuOpened: false,
     };
     this.burgerLogic = this.burgerLogic.bind(this);
+    this.fileCSS = this.fileCSS.bind(this);
   }
 
   // dealing with containers overflow
@@ -44,7 +45,23 @@ class MyProvider extends Component {
       });
     }
   }
+  // Upload Photo CSS
+  fileCSS() {
+    const photoInput = document.querySelector("#photo");
+    const fileCustom = document.querySelector(".file-custom");
+    const file = document.querySelector(".file");
+    let { photo, photoClicked } = this.state;
 
+    document.addEventListener("click", (e) => {
+      let click = e.target;
+      if (click != fileCustom && click != file) {
+        fileCustom.classList.remove("focus");
+        fileCustom.classList.remove("valid");
+      } else if (click == fileCustom) {
+        fileCustom.classList.add("focus");
+      }
+    });
+  }
   // Form logic
   formSubmit() {
     const form = document.querySelector(".form");
@@ -59,6 +76,9 @@ class MyProvider extends Component {
           cutAt: this.cutAt,
           burgerLogic: this.burgerLogic,
           formSubmit: this.formSubmit,
+          fileCSS: this.fileCSS,
+          handleChangePhoto: this.handleChangePhoto,
+          fileCSSclicked: this.fileCSSclicked,
         }}
       >
         {this.props.children}

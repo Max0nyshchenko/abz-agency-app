@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MyContext from "../context/MyContext";
 
 export default function Form() {
   const photoTXT = () => {
     let txt = document.getElementById("photo").value;
-    console.log(txt);
     document.querySelector(".file-custom").innerHTML = txt;
   };
 
@@ -84,16 +83,31 @@ export default function Form() {
                   </div>
                 </div>
                 <div className="input-field">
-                  {/* <label htmlFor="photo">Photo</label>
-            <input
-              type="file"
-              name="photo"
-              placeholder="Upload your photo"
-              id="photo"
-              required
-            /> */}
                   <label htmlFor="photo">Photo</label>
-                  <label className="file" htmlFor="file">
+                  <label
+                    onClick={() => {
+                      let { fileCSS } = context;
+                      const fileCustom = document.querySelector(".file-custom");
+                      const photoInput = document.querySelector("#photo");
+                      photoInput.click();
+                      fileCustom.classList.add("focus");
+                      fileCSS();
+                    }}
+                    onChange={() => {
+                      const fileCustom = document.querySelector(".file-custom");
+                      fileCustom.classList.remove("focus");
+                      fileCustom.classList.remove("invalid");
+                      fileCustom.classList.add("valid");
+                      fileCustom.classList.add("uploaded");
+                      if (fileCustom.innerText == "") {
+                        fileCustom.classList.add("invalid");
+                        fileCustom.classList.remove("valid");
+                        fileCustom.innerText = "No file chosen";
+                      }
+                    }}
+                    className="file"
+                    htmlFor="file"
+                  >
                     <input
                       onChange={photoTXT}
                       type="file"
