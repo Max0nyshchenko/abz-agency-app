@@ -7,9 +7,59 @@ class MyProvider extends Component {
     super();
     this.state = {
       mobMenuOpened: false,
+      users: {},
+      usersLoaded: false,
+      next_url:
+        "https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6",
     };
     this.burgerLogic = this.burgerLogic.bind(this);
     this.fileCSS = this.fileCSS.bind(this);
+    this.showMore = this.showMore.bind(this);
+    this.getData = this.getData.bind(this);
+    this.getData2 = this.getData2.bind(this);
+  }
+
+  getData = () => {
+    // get users
+
+    //
+    fetch(this.state.next_url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          users: data,
+          usersLoaded: true,
+        });
+      })
+      .catch((error) => console.log(error));
+  };
+  getData2(url) {
+    fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          users: data,
+          usersLoaded: true,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+  // show more users.js handler
+  showMore(url) {
+    console.log(url);
+    this.setState({
+      next_url: url,
+    });
+
+    console.log(this.state.next_url);
   }
 
   // dealing with containers overflow
@@ -77,8 +127,8 @@ class MyProvider extends Component {
           burgerLogic: this.burgerLogic,
           formSubmit: this.formSubmit,
           fileCSS: this.fileCSS,
-          handleChangePhoto: this.handleChangePhoto,
-          fileCSSclicked: this.fileCSSclicked,
+          showMore: this.showMore,
+          getData2: this.getData2,
         }}
       >
         {this.props.children}
