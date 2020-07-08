@@ -57,7 +57,7 @@ export default function Users() {
                           <p className="user-position">{user.position}</p>
                           <Tooltip
                             followCursor="true"
-                            title="Welcome to React"
+                            title={user.email}
                             position="bottom"
                             trigger="mouseenter"
                           >
@@ -77,7 +77,13 @@ export default function Users() {
                 //   : null
                 () => {
                   context.showMore(context.users.links.next_url);
-                  context.getData2(context.users.links.next_url);
+                  if (context.users.links.next_url == null) {
+                    document.querySelector(
+                      ".users-wrapper button.primary"
+                    ).style.display = "none";
+                  } else {
+                    context.getData2(context.users.links.next_url);
+                  }
                 }
               }
               style={{ margin: "0 auto", display: "block" }}
