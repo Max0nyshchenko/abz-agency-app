@@ -20,7 +20,6 @@ export default function Users() {
   return (
     <MyContext.Consumer>
       {(context) => {
-        console.log(context);
         return (
           <section className="users-wrapper">
             <h1 className="heading1">Our cheerful users</h1>
@@ -45,13 +44,10 @@ export default function Users() {
               </div> */}
               {context.usersLoaded
                 ? context.users.users.map((user) => {
+                    let img = user.photo || userImg;
                     return (
                       <div key={user.id} className="user">
-                        <img
-                          className="user-img"
-                          src={user.photo}
-                          alt="user image"
-                        />
+                        <img className="user-img" src={img} alt="user image" />
                         <h2 className="user-name">{user.name}</h2>
                         <div className="user-info">
                           <p className="user-position">{user.position}</p>
@@ -71,21 +67,16 @@ export default function Users() {
                 : "Loading..."}
             </div>
             <button
-              onClick={
-                // context.usersLoaded
-                //   ? context.showMore(context.users.page)
-                //   : null
-                () => {
-                  context.showMore(context.users.links.next_url);
-                  if (context.users.links.next_url == null) {
-                    document.querySelector(
-                      ".users-wrapper button.primary"
-                    ).style.display = "none";
-                  } else {
-                    context.getData2(context.users.links.next_url);
-                  }
+              onClick={() => {
+                context.showMore(context.users.links.next_url);
+                if (context.users.links.next_url == null) {
+                  document.querySelector(
+                    ".users-wrapper button.primary"
+                  ).style.display = "none";
+                } else {
+                  context.getData2(context.users.links.next_url);
                 }
-              }
+              }}
               style={{ margin: "0 auto", display: "block" }}
               className="primary"
             >

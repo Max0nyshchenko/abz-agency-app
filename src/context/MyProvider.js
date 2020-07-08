@@ -7,6 +7,8 @@ class MyProvider extends Component {
     super();
     this.state = {
       mobMenuOpened: false,
+      positionsLoaded: false,
+      positions: {},
       users: {},
       usersLoaded: false,
       next_url:
@@ -17,6 +19,7 @@ class MyProvider extends Component {
     this.showMore = this.showMore.bind(this);
     this.getData = this.getData.bind(this);
     this.getData2 = this.getData2.bind(this);
+    this.getPositions = this.getPositions.bind(this);
   }
 
   getData = () => {
@@ -51,15 +54,13 @@ class MyProvider extends Component {
 
   componentDidMount() {
     this.getData();
+    this.getPositions();
   }
   // show more users.js handler
   showMore(url) {
-    console.log(url);
     this.setState({
       next_url: url,
     });
-
-    console.log(this.state.next_url);
   }
 
   // dealing with containers overflow
@@ -116,6 +117,34 @@ class MyProvider extends Component {
   formSubmit() {
     const form = document.querySelector(".form");
     form.classList.add("submitted");
+  }
+  handleSubmit() {
+    //     var formData = new FormData();
+    //     var fileField = document.querySelector('input[type="file"]');
+    //       formData.append('position_id', 2);
+    //       formData.append('name', 'Jhon');
+    //       formData.append('email', 'Jhon@gmail.com');
+    //       formData.append('phone', '+380955388485');
+    //       formData.append('photo', fileField.files[0]);
+    // fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users',
+    //         { method: 'POST', body: formData, headers:
+    //             { 'Token': token, get token with GET api/v1/token method },
+    //            })
+    //           .then(function(response) { return response.json(); })
+    //           .then(function(data) { console.log(data); if(data.success) {  process success response } else {  proccess server errors } }) .catch(function(error) {  proccess network errors });
+  }
+  // get radio buttons position from api
+  getPositions() {
+    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/positions")
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          positionsLoaded: true,
+          positions: data.positions,
+        });
+      });
   }
 
   render() {

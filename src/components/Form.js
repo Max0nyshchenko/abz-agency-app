@@ -47,40 +47,37 @@ export default function Form() {
                   <p>Enter phone number in open format</p>
                 </div>
                 <div className="input-field">
-                  <label htmlFor="position">Select your position</label>
-                  <div className="radio">
+                  <label htmlFor="positions">Select your position</label>
+                  {/* <div className="radio">
                     <input
                       type="radio"
                       name="position"
                       id="frontend_developer"
                       value="frontend_developer"
+                      required
                     />
                     <label htmlFor="frontend_developer">
                       Frontend developer
                     </label>
-                  </div>
-                  <div className="radio">
-                    <input
-                      type="radio"
-                      name="position"
-                      id="backend_developer"
-                      value="backend_developer"
-                    />
-                    <label htmlFor="backend_developer">Backend developer</label>
-                  </div>
-                  <div className="radio">
-                    <input
-                      type="radio"
-                      name="position"
-                      id="designer"
-                      value="designer"
-                    />
-                    <label htmlFor="designer">Designer</label>
-                  </div>
-                  <div className="radio">
-                    <input type="radio" name="position" id="QA" value="QA" />
-                    <label htmlFor="QA">QA</label>
-                  </div>
+                  </div> */}
+                  {context.positionsLoaded
+                    ? context.positions.map((position) => {
+                        return (
+                          <div className="radio">
+                            <input
+                              type="radio"
+                              name="position"
+                              id="frontend_developer"
+                              value={position.id}
+                              required
+                            />
+                            <label htmlFor="frontend_developer">
+                              {position.name}
+                            </label>
+                          </div>
+                        );
+                      })
+                    : "Loading..."}
                 </div>
                 <div className="input-field">
                   <label htmlFor="photo">Photo</label>
@@ -113,6 +110,7 @@ export default function Form() {
                       type="file"
                       name="photo"
                       id="photo"
+                      required
                     />
                     <span className="file-custom">Upload your photo</span>
                   </label>
