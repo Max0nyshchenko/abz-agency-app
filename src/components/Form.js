@@ -18,6 +18,7 @@ export default function Form() {
                 onSubmit={context.handleSubmit}
                 action="POST"
                 className="form"
+                method="POST"
               >
                 <div className="input-field">
                   <label htmlFor="name">Name</label>

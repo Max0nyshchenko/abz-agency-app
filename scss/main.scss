@@ -249,6 +249,8 @@ h1.heading1 {
     justify-items: center;
     justify-content: center;
     margin-bottom: 2.5rem;
+    word-break: break-word;
+    overflow-x: hidden;
   }
 
   .user-info {

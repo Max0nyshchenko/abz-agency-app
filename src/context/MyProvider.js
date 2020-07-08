@@ -133,12 +133,37 @@ class MyProvider extends Component {
     for (var pair of formData.entries()) {
       console.log(pair[0] + ", " + pair[1]);
     }
-    // fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users',
-    //         { method: 'POST', body: formData, headers:
-    //             { 'Token': token, get token with GET api/v1/token method },
-    //            })
-    //           .then(function(response) { return response.json(); })
-    //           .then(function(data) { console.log(data); if(data.success) {  process success response } else {  proccess server errors } }) .catch(function(error) {  proccess network errors });
+    // get token
+    let token;
+    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/token")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        token = data.token;
+        console.log(token);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+
+    // POST data
+
+    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/users", {
+      method: "POST",
+      body: formData,
+      headers: { Token: token },
+      credentials: "include",
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
   }
   // get radio buttons position from api
   getPositions() {
