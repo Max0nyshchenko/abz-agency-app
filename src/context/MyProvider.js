@@ -118,14 +118,21 @@ class MyProvider extends Component {
     const form = document.querySelector(".form");
     form.classList.add("submitted");
   }
-  handleSubmit() {
-    //     var formData = new FormData();
-    //     var fileField = document.querySelector('input[type="file"]');
-    //       formData.append('position_id', 2);
-    //       formData.append('name', 'Jhon');
-    //       formData.append('email', 'Jhon@gmail.com');
-    //       formData.append('phone', '+380955388485');
-    //       formData.append('photo', fileField.files[0]);
+  handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+    formData.append(
+      "position_id",
+      document.querySelector('input[name="position"]:checked').value
+    );
+    formData.append("name", document.querySelector("input#name").value);
+    formData.append("email", document.querySelector("input#email").value);
+    formData.append("phone", document.querySelector("input#phone").value);
+    formData.append("photo", fileField.files[0]);
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ", " + pair[1]);
+    }
     // fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users',
     //         { method: 'POST', body: formData, headers:
     //             { 'Token': token, get token with GET api/v1/token method },
@@ -158,6 +165,7 @@ class MyProvider extends Component {
           fileCSS: this.fileCSS,
           showMore: this.showMore,
           getData2: this.getData2,
+          handleSubmit: this.handleSubmit,
         }}
       >
         {this.props.children}

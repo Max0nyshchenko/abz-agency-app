@@ -14,7 +14,11 @@ export default function Form() {
           <div>
             <div className="form-wrapper">
               <h1 className="heading1">Register to get a work</h1>
-              <form action="POST" className="form">
+              <form
+                onSubmit={context.handleSubmit}
+                action="POST"
+                className="form"
+              >
                 <div className="input-field">
                   <label htmlFor="name">Name</label>
                   <input
@@ -48,30 +52,18 @@ export default function Form() {
                 </div>
                 <div className="input-field">
                   <label htmlFor="positions">Select your position</label>
-                  {/* <div className="radio">
-                    <input
-                      type="radio"
-                      name="position"
-                      id="frontend_developer"
-                      value="frontend_developer"
-                      required
-                    />
-                    <label htmlFor="frontend_developer">
-                      Frontend developer
-                    </label>
-                  </div> */}
                   {context.positionsLoaded
                     ? context.positions.map((position) => {
                         return (
-                          <div className="radio">
+                          <div key={position.id} className="radio">
                             <input
                               type="radio"
                               name="position"
-                              id="frontend_developer"
+                              id={position.name}
                               value={position.id}
                               required
                             />
-                            <label htmlFor="frontend_developer">
+                            <label htmlFor={position.name}>
                               {position.name}
                             </label>
                           </div>
