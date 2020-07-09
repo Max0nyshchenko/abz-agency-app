@@ -118,7 +118,7 @@ class MyProvider extends Component {
     const form = document.querySelector(".form");
     form.classList.add("submitted");
   }
-  handleSubmit(e) {
+  handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     const fileField = document.querySelector('input[type="file"]');
@@ -135,26 +135,29 @@ class MyProvider extends Component {
     }
     // get token
     let token;
-    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/token")
+    await fetch("https://frontend-test-assignment-api.abz.agency/api/v1/token")
       .then(function (response) {
         return response.json();
       })
-      .then(function (data) {
+      .then((data) => {
         token = data.token;
         console.log(token);
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error.message);
       });
 
     // POST data
 
-    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/users", {
-      method: "POST",
-      body: formData,
-      headers: { Token: token },
-      credentials: "include",
-    })
+    await fetch(
+      "https://frontend-test-assignment-api.abz.agency/api/v1/users",
+      {
+        method: "POST",
+        body: formData,
+        headers: { Token: token },
+        // credentials: "include",
+      }
+    )
       .then(function (response) {
         return response.json();
       })
@@ -164,7 +167,7 @@ class MyProvider extends Component {
       .catch(function (error) {
         console.log(error.message);
       });
-  }
+  };
   // get radio buttons position from api
   getPositions() {
     fetch("https://frontend-test-assignment-api.abz.agency/api/v1/positions")
