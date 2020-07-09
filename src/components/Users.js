@@ -69,10 +69,11 @@ export default function Users() {
             <button
               onClick={() => {
                 console.log(context.users);
-                if (context.users.page >= context.users.total_pages) {
+                if (context.users.page + 2 > context.users.total_pages) {
                   document.querySelector(
                     ".users-wrapper button.primary"
                   ).style.display = "none";
+                  context.getData2(context.users.links.next_url);
                 } else {
                   context.getData2(context.users.links.next_url);
                 }

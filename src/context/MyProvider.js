@@ -150,6 +150,9 @@ class MyProvider extends Component {
       })
       .then(function (data) {
         console.log(data);
+        if (!data.success) {
+          alert(data.message);
+        }
       })
       .catch(function (error) {
         console.log(error.message);
