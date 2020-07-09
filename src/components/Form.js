@@ -109,7 +109,17 @@ export default function Form() {
                   </label>
                 </div>
                 <input
-                  onClick={context.formSubmit}
+                  onClick={() => {
+                    context.formSubmit();
+                    const fileCustom = document.querySelector(".file-custom");
+                    if (
+                      fileCustom.innerText == "" ||
+                      fileCustom.innerText == "Upload your photo" ||
+                      fileCustom.innerText == "No file chosen"
+                    ) {
+                      fileCustom.classList.add("invalid");
+                    }
+                  }}
                   className="primary"
                   type="submit"
                   value="Sign up now"

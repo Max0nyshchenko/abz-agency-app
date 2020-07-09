@@ -92,7 +92,6 @@ h1.heading1 {
   color: #000;
   flex-wrap: wrap;
   line-height: 1.5rem;
-  // padding: 0 2rem;
   padding: 1.25rem 1.875rem;
 }
 
@@ -396,6 +395,10 @@ h1.heading1 {
         color: #c3c8ce;
       }
 
+      &.invalid.focus {
+        box-shadow: 0 0 0 0.2rem #f8d6da;
+      }
+
       &.valid {
         border: 1px solid #80bdff;
       }
@@ -405,7 +408,6 @@ h1.heading1 {
         top: -0.075rem;
         right: -0.075rem;
         bottom: -0.075rem;
-        // z-index: 6;
         display: block;
         content: "Browse";
         height: 2.5rem;
@@ -434,8 +436,6 @@ h1.heading1 {
     --border: #bbc1e1;
     --border-hover: #275efe;
     --background: #fff;
-    // --disabled: #f6f8ff;
-    // --disabled-inner: #e1e6f9;
     -webkit-appearance: none;
     -moz-appearance: none;
     height: 21px;

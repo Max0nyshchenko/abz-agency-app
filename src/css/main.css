@@ -415,6 +415,11 @@ h1.heading1 {
   color: #c3c8ce;
 }
 
+.input-field .file .file-custom.invalid.focus {
+  -webkit-box-shadow: 0 0 0 0.2rem #f8d6da;
+          box-shadow: 0 0 0 0.2rem #f8d6da;
+}
+
 .input-field .file .file-custom.valid {
   border: 1px solid #80bdff;
 }
