@@ -68,8 +68,8 @@ export default function Users() {
             </div>
             <button
               onClick={() => {
-                context.showMore(context.users.links.next_url);
-                if (context.users.links.next_url == null) {
+                console.log(context.users);
+                if (context.users.page >= context.users.total_pages) {
                   document.querySelector(
                     ".users-wrapper button.primary"
                   ).style.display = "none";

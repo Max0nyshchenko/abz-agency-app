@@ -16,7 +16,6 @@ class MyProvider extends Component {
     };
     this.burgerLogic = this.burgerLogic.bind(this);
     this.fileCSS = this.fileCSS.bind(this);
-    this.showMore = this.showMore.bind(this);
     this.getData = this.getData.bind(this);
     this.getData2 = this.getData2.bind(this);
     this.getPositions = this.getPositions.bind(this);
@@ -24,8 +23,6 @@ class MyProvider extends Component {
 
   getData = () => {
     // get users
-
-    //
     fetch(this.state.next_url)
       .then(function (response) {
         return response.json();
@@ -55,12 +52,6 @@ class MyProvider extends Component {
   componentDidMount() {
     this.getData();
     this.getPositions();
-  }
-  // show more users.js handler
-  showMore(url) {
-    this.setState({
-      next_url: url,
-    });
   }
 
   // dealing with containers overflow
@@ -130,9 +121,7 @@ class MyProvider extends Component {
     formData.append("email", document.querySelector("input#email").value);
     formData.append("phone", document.querySelector("input#phone").value);
     formData.append("photo", fileField.files[0]);
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ", " + pair[1]);
-    }
+
     // get token
     let token;
     await fetch("https://frontend-test-assignment-api.abz.agency/api/v1/token")
@@ -141,7 +130,6 @@ class MyProvider extends Component {
       })
       .then((data) => {
         token = data.token;
-        console.log(token);
       })
       .catch((error) => {
         console.log(error.message);
@@ -155,7 +143,6 @@ class MyProvider extends Component {
         method: "POST",
         body: formData,
         headers: { Token: token },
-        // credentials: "include",
       }
     )
       .then(function (response) {
@@ -191,7 +178,6 @@ class MyProvider extends Component {
           burgerLogic: this.burgerLogic,
           formSubmit: this.formSubmit,
           fileCSS: this.fileCSS,
-          showMore: this.showMore,
           getData2: this.getData2,
           handleSubmit: this.handleSubmit,
         }}
