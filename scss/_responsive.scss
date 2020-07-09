@@ -101,8 +101,11 @@
           height: 15px;
           border-radius: 50%;
           background: var(--active-inner);
-          opacity: 1;
+          opacity: 0;
           transform: scale(var(--s, 0.7));
+        }
+        &:checked:after {
+          opacity: 1;
         }
       }
     }

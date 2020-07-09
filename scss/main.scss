@@ -429,7 +429,7 @@ h1.heading1 {
 
   input[type="radio"] {
     --active: #275efe;
-    --active-inner: #fff;
+    --active-inner: #007bff;
     --focus: 2px rgba(39, 94, 254, 0.3);
     --border: #bbc1e1;
     --border-hover: #275efe;
@@ -450,7 +450,7 @@ h1.heading1 {
     padding: 0.5rem;
     background: var(--b, var(--background));
     transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
-    &:after {
+    &::after {
       content: "";
       display: block;
       left: 0;
@@ -475,11 +475,14 @@ h1.heading1 {
       height: 19px;
       border-radius: 50%;
       background: var(--active-inner);
-      opacity: 1;
+      opacity: 0;
       transform: scale(var(--s, 0.7));
     }
     &:checked {
       --s: 0.5;
+    }
+    &:checked:after {
+      opacity: 1;
     }
   }
 }
