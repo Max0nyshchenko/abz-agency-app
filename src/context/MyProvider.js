@@ -152,6 +152,8 @@ class MyProvider extends Component {
         console.log(data);
         if (!data.success) {
           alert(data.message);
+        } else {
+          alert("Success");
         }
       })
       .catch(function (error) {
